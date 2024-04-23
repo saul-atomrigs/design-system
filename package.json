@@ -1,5 +1,9 @@
 {
   "name": "@saul-atomrigs/design-system",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saul-atomrigs/design-system.git"
+  },
   "private": false,
   "version": "0.1.0",
   "type": "module",
