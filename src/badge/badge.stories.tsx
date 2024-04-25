@@ -1,4 +1,7 @@
 import { Badge } from './badge';
+import type { StoryObj } from '@storybook/react';
+
+type Story = StoryObj<typeof Badge>;
 
 export default {
   title: 'Design System/Badge',
@@ -11,7 +14,7 @@ export const AllBadges = {
     inline: true,
   },
   name: 'all badges',
-  render: (args) => (
+  render: () => (
     <>
       <Badge status='positive'>Positive</Badge>
       <Badge status='negative'>Negative</Badge>
@@ -57,7 +60,7 @@ export const Error = {
   },
 };
 
-export const WithIcon = {
+export const WithIcon: Story = {
   args: {
     status: 'warning',
     icon: 'check',

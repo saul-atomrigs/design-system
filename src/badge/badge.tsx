@@ -2,7 +2,11 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { background, color, typography } from '../shared/styles';
 
-const BadgeWrapper = styled.div`
+type BadgeProps = {
+  status?: 'positive' | 'negative' | 'warning' | 'error' | 'neutral';
+};
+
+const BadgeWrapper = styled.div<BadgeProps>`
   display: inline-block;
   vertical-align: top;
   font-size: 11px;
