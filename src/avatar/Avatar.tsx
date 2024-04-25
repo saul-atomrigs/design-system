@@ -1,19 +1,26 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { color, typography } from '../shared/styles';
-
 import { glow } from '../shared/animation';
-
 import { Icon } from '../Icon/Icon';
 
-export const sizes = {
+type AvatarProps = {
+  size?: 'tiny' | 'small' | 'medium' | 'large';
+  loading?: boolean;
+  icon?: keyof typeof Icon;
+  name?: string;
+  src?: string;
+  username?: string;
+};
+
+const SIZES = {
   large: 40,
   medium: 28,
   small: 20,
   tiny: 16,
 };
 
-const Image = styled.div`
+const Image = styled.div<AvatarProps>`
   background: ${(props) => (!props.loading ? 'transparent' : color.light)};
   border-radius: 50%;
   display: inline-block;
@@ -21,32 +28,32 @@ const Image = styled.div`
   overflow: hidden;
   text-transform: uppercase;
 
-  height: ${sizes.medium}px;
-  width: ${sizes.medium}px;
-  line-height: ${sizes.medium}px;
+  height: ${SIZES.medium}px;
+  width: ${SIZES.medium}px;
+  line-height: ${SIZES.medium}px;
 
   ${(props) =>
     props.size === 'tiny' &&
     css`
-      height: ${sizes.tiny}px;
-      width: ${sizes.tiny}px;
-      line-height: ${sizes.tiny}px;
+      height: ${SIZES.tiny}px;
+      width: ${SIZES.tiny}px;
+      line-height: ${SIZES.tiny}px;
     `}
 
   ${(props) =>
     props.size === 'small' &&
     css`
-      height: ${sizes.small}px;
-      width: ${sizes.small}px;
-      line-height: ${sizes.small}px;
+      height: ${SIZES.small}px;
+      width: ${SIZES.small}px;
+      line-height: ${SIZES.small}px;
     `}
 
   ${(props) =>
     props.size === 'large' &&
     css`
-      height: ${sizes.large}px;
-      width: ${sizes.large}px;
-      line-height: ${sizes.large}px;
+      height: ${SIZES.large}px;
+      width: ${SIZES.large}px;
+      line-height: ${SIZES.large}px;
     `}
 
   ${(props) =>
@@ -75,26 +82,26 @@ const Image = styled.div`
   }
 `;
 // prettier-ignore
-const Initial = styled.div`
+const Initial = styled.div<AvatarProps>`
   color: ${color.lightest};
   text-align: center;
 
   font-size: ${typography.size.s2}px;
-  line-height: ${sizes.medium}px;
+  line-height: ${SIZES.medium}px;
 
   ${props => props.size === "tiny" && css`
-    font-size: ${typography.size.s1 - 2}px;
-    line-height: ${sizes.tiny}px;
+    font-size: ${typography.size.s1}px;
+    line-height: ${SIZES.tiny}px;
   `}
 
   ${props => props.size === "small" && css`
-    font-size: ${typography.size.s1}px;
-    line-height: ${sizes.small}px;
+    font-size: ${typography.size.s2}px;
+    line-height: ${SIZES.small}px;
   `}
 
   ${props => props.size === "large" && css`
     font-size: ${typography.size.s3}px;
-    line-height: ${sizes.large}px;
+    line-height: ${SIZES.large}px;
   `}
 `;
 
@@ -102,9 +109,15 @@ const Initial = styled.div`
 - Use an avatar for attributing actions or content to specific users.
 - The user's name should always be present when using Avatar – either printed beside the avatar or in a tooltip.
 **/
-export function Avatar({ loading, username, src, size, ...props }) {
+export function Avatar({
+  loading,
+  username,
+  src,
+  size,
+  ...props
+}: AvatarProps) {
   let avatarFigure = <Icon icon='useralt' />;
-  const a11yProps = {};
+  const a11yProps: { [key: string]: boolean | string | undefined } = {};
 
   if (loading) {
     a11yProps['aria-busy'] = true;
@@ -115,7 +128,7 @@ export function Avatar({ loading, username, src, size, ...props }) {
     a11yProps['aria-label'] = username;
     avatarFigure = (
       <Initial size={size} aria-hidden='true'>
-        {username.substring(0, 1)}
+        {username?.substring(0, 1)}
       </Initial>
     );
   }
