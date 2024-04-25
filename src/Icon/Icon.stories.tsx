@@ -2,13 +2,16 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { Icon } from './Icon';
 import { icons } from '../shared/icons';
+import type { StoryObj } from '@storybook/react';
+
+type Story = StoryObj<typeof Icon>;
 
 const Meta = styled.div`
   color: #666;
   font-size: 12px;
 `;
 
-const Item = styled.li`
+const Item = styled.li<Story & { minimal?: boolean }>`
   display: inline-flex;
   flex-direction: row;
   align-items: center;
@@ -81,7 +84,7 @@ export const NoLabels = {
   ),
 };
 
-export const Inline = {
+export const Inline: Story = {
   render: (args) => (
     <>
       this is an inline <Icon {...args} /> icon (default)
@@ -89,11 +92,10 @@ export const Inline = {
   ),
   args: {
     icon: 'facehappy',
-    'aria-label': 'Happy face',
   },
 };
 
-export const Block = {
+export const Block: Story = {
   render: (args) => (
     <>
       this is a block <Icon {...args} /> icon
@@ -101,7 +103,6 @@ export const Block = {
   ),
   args: {
     icon: 'facehappy',
-    'aria-label': 'Happy face',
     block: true,
   },
 };
