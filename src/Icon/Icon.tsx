@@ -1,7 +1,12 @@
 import styled from '@emotion/styled';
 import { icons } from '../shared/icons';
 
-const Svg = styled.svg`
+type Icon = {
+  icon?: string;
+  block?: boolean;
+};
+
+const Svg = styled.svg<Icon>`
   display: ${(props) => (props.block ? 'block' : 'inline-block')};
   vertical-align: middle;
 
@@ -20,7 +25,7 @@ const Path = styled.path`
  * - *decorative only*: for example, it illustrates a label next to it. We must ensure that it is ignored by screen readers, by setting `aria-hidden` attribute (ex: `<Icon icon="check" aria-hidden />`)
  * - *non-decorative*: it means that it delivers information. For example, an icon as only child in a button. The meaning can be obvious visually, but it must have a proper text alternative via `aria-label` for screen readers. (ex: `<Icon icon="print" aria-label="Print this document" />`)
  */
-export function Icon({ icon, block, ...props }) {
+export function Icon({ icon, block, ...props }: Icon) {
   return (
     <Svg
       viewBox='0 0 1024 1024'
@@ -29,7 +34,7 @@ export function Icon({ icon, block, ...props }) {
       block={block}
       {...props}
     >
-      <Path d={icons[icon]} />
+      <Path d={icons[icon as keyof typeof icons]} />
     </Svg>
   );
 }
