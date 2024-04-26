@@ -22,6 +22,9 @@ devDependencies:
   '@emotion/styled':
     specifier: ^11.11.5
     version: 11.11.5(@emotion/react@11.11.4)(@types/react@18.2.79)(react@18.2.0)
+  '@storybook/addon-actions':
+    specifier: ^8.0.9
+    version: 8.0.9
   '@storybook/addon-essentials':
     specifier: ^8.0.8
     version: 8.0.8(@types/react@18.2.79)(react-dom@18.2.0)(react@18.2.0)
@@ -73,6 +76,9 @@ devDependencies:
   eslint-plugin-storybook:
     specifier: ^0.8.0
     version: 0.8.0(eslint@8.57.0)(typescript@5.4.5)
+  polished:
+    specifier: ^4.3.1
+    version: 4.3.1
   storybook:
     specifier: ^8.0.8
     version: 8.0.8(react-dom@18.2.0)(react@18.2.0)
@@ -2114,6 +2120,17 @@ packages:
       uuid: 9.0.1
     dev: true
 
+  /@storybook/addon-actions@8.0.9:
+    resolution: {integrity: sha512-+I3VTvlKdj8puHeS2tyaOVv9syDiNLneVZbTfqN+UDOK2i42NwvZr8PVwjTzMlEj9eePJdCZgiipz55xwts5bw==}
+    dependencies:
+      '@storybook/core-events': 8.0.9
+      '@storybook/global': 5.0.0
+      '@types/uuid': 9.0.8
+      dequal: 2.0.3
+      polished: 4.3.1
+      uuid: 9.0.1
+    dev: true
+
   /@storybook/addon-backgrounds@8.0.8:
     resolution: {integrity: sha512-lrAJjVxDeXSK116rDajb56TureZiT76ygraP22/IvU3IcWCEcRiKYwlay8WgCTbJHtFmdBpelLBapoT46+IR9Q==}
     dependencies:
@@ -2505,6 +2522,12 @@ packages:
 
   /@storybook/core-events@8.0.8:
     resolution: {integrity: sha512-PtuvR7vS4glDEdCfKB4f1k3Vs1C3rTWP2DNbF+IjjPhNLMBznCdzTAPcz+NUIBvpjjGnhKwWikJ0yj931YjSVg==}
+    dependencies:
+      ts-dedent: 2.2.0
+    dev: true
+
+  /@storybook/core-events@8.0.9:
+    resolution: {integrity: sha512-DxSUx7wG9Qe3OFUBnv3OrYq48J8UWNo2DUR5/JecJCtp3n++L4fAEW3J0IF5FfxpQDMQSp1yTNjZ2PaWCMd2ag==}
     dependencies:
       ts-dedent: 2.2.0
     dev: true
