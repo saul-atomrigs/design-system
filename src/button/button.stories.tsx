@@ -3,8 +3,9 @@ import styled from '@emotion/styled';
 import { Button } from './button';
 import { Icon } from '../Icon/Icon';
 import { StoryLinkWrapper } from '../link-wrapper/story-link-wrapper';
+import type { ButtonProps } from './button';
 
-const CustomButton = styled.button`
+const CustomButton = styled.button<ButtonProps>`
   border: 1px solid green;
   background: lightgreen;
   color: rebeccapurple;
@@ -12,7 +13,7 @@ const CustomButton = styled.button`
   font-size: 1.2em;
 `;
 
-function ButtonWrapper(props) {
+function ButtonWrapper(props: ButtonProps) {
   return <CustomButton {...props} />;
 }
 
@@ -77,7 +78,7 @@ export const AllButtons = {
   ),
 };
 
-export const buttonWrapper = {
+export const Button_Wrapper = {
   name: 'button wrapper',
   render: () => (
     <div>

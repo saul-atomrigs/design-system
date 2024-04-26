@@ -4,18 +4,25 @@ import { darken, rgba } from 'polished';
 import { color, typography } from '../shared/styles';
 import { easing } from '../shared/animation';
 
-type ButtonProps = {
+export type ButtonProps = {
   isLoading?: boolean;
   loadingText?: string;
   isLink?: boolean;
   children: ReactNode;
-  appearance?: keyof typeof APPEARANCES;
+  appearance?:
+    | 'primary'
+    | 'secondary'
+    | 'tertiary'
+    | 'outline'
+    | 'primaryOutline'
+    | 'secondaryOutline';
   isDisabled?: boolean;
   isUnclickable?: boolean;
   containsIcon?: boolean;
-  size?: keyof typeof SIZES;
+  size?: 'small' | 'medium';
   ButtonWrapper?: ElementType;
   as?: ElementType;
+  href?: string;
 };
 
 const Text = styled.span`

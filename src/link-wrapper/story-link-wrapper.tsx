@@ -4,7 +4,7 @@ type StoryLinkWrapperProps = {
   children: React.ReactNode;
   className?: string;
   href?: string;
-  onClick: () => void;
+  onClick?: () => void;
   to?: string;
 };
 
@@ -20,7 +20,8 @@ export function StoryLinkWrapper({
 }: StoryLinkWrapperProps) {
   const modifiedOnClick = (event: React.MouseEvent) => {
     event.preventDefault();
-    onClick();
+    // onClick();
+    onClick?.();
     fireClickAction(href || to);
   };
 
