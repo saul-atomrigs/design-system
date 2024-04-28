@@ -20,6 +20,24 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": [
+    "src",
+    "**/*",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/App.tsx",
+    "src/index.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib",
+    "src/__tests__",
+    "src/stories",
+    "**/*.spec.ts",
+    "**/*.stories.tsx",
+    "dist",
+    "tsconfig.node.json",
+    "tsconfig.eslint.json"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
