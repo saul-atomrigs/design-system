@@ -197,7 +197,7 @@ export function Link({
     </>
   );
 
-  let SelectedLink = LinkA;
+  let SelectedLink: React.ElementType = LinkA;
   if (LinkWrapper) {
     SelectedLink = applyStyle(LinkWrapper);
   } else if (isButton) {
