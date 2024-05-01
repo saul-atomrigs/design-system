@@ -18,6 +18,8 @@ type LinkProps = {
   secondary?: boolean;
   tertiary?: boolean;
   children?: React.ReactNode;
+  href?: string;
+  onClick?: () => void;
 };
 
 const linkStyles = css`
