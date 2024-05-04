@@ -1,10 +1,24 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { action } from '@storybook/addon-actions';
+import type { Meta, StoryObj } from '@storybook/react';
 
 import { Icon } from '../icon/Icon';
 import { Link } from './Link';
 import { StoryLinkWrapper } from '../link-wrapper/StoryLinkWrapper';
+
+const meta: Meta<typeof Link> = {
+  title: 'Link',
+  component: Link,
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'fullscreen',
+  },
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Link>;
 
 const CustomLink = styled(Link)`
   && {
@@ -14,12 +28,7 @@ const CustomLink = styled(Link)`
 
 const onLinkClick = action('onLinkClick');
 
-export default {
-  title: 'Design System/Link',
-  component: Link,
-};
-
-export const ALL = {
+export const ALL: Story = {
   render: () => (
     <div>
       <Link href='https://storybook.js.org/tutorials/'>Default</Link>

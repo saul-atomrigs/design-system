@@ -1,12 +1,16 @@
+import React from 'react';
 import { Avatar } from './Avatar';
-import type { StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react';
+
+const meta: Meta<typeof Avatar> = {
+  title: 'Avatar',
+  component: Avatar,
+  tags: ['autodocs'],
+};
+
+export default meta;
 
 type Story = StoryObj<typeof Avatar>;
-
-export default {
-  title: 'Design System/Avatar',
-  component: Avatar,
-};
 
 export const Standard = {
   args: {

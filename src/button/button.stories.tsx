@@ -1,10 +1,24 @@
 import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
 import styled from '@emotion/styled';
 
 import { Button } from './Button';
 import { Icon } from '../icon/Icon';
 import { StoryLinkWrapper } from '../link-wrapper/StoryLinkWrapper';
 import type { ButtonProps } from './Button';
+
+const meta: Meta<typeof Button> = {
+  title: 'Button',
+  component: Button,
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'fullscreen',
+  },
+};
+
+export default meta;
+
+type Story = StoryObj<typeof Button>;
 
 const CustomButton = styled.button<ButtonProps>`
   border: 1px solid green;
@@ -18,12 +32,7 @@ function ButtonWrapper(props: ButtonProps) {
   return <CustomButton {...props} />;
 }
 
-export default {
-  title: 'Button',
-  component: Button,
-};
-
-export const AllButtons = {
+export const AllButtons: Story = {
   name: 'all buttons',
   render: () => (
     <>
@@ -79,7 +88,7 @@ export const AllButtons = {
   ),
 };
 
-export const Button_Wrapper = {
+export const Button_Wrapper: Story = {
   name: 'button wrapper',
   render: () => (
     <div>
@@ -164,7 +173,7 @@ export const Button_Wrapper = {
   ),
 };
 
-export const AnchorWrapper = {
+export const AnchorWrapper: Story = {
   name: 'anchor wrapper',
   render: () => (
     <div>

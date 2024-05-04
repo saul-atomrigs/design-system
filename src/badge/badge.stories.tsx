@@ -1,12 +1,16 @@
+import React from 'react';
+import type { Meta, StoryObj } from '@storybook/react';
+
 import { Badge } from './Badge';
-import type { StoryObj } from '@storybook/react';
 
-type Story = StoryObj<typeof Badge>;
-
-export default {
-  title: 'Design System/Badge',
+const meta: Meta<typeof Badge> = {
+  title: 'Badge',
   component: Badge,
 };
+
+export default meta;
+
+type Story = StoryObj<typeof Badge>;
 
 export const AllBadges = {
   args: {
