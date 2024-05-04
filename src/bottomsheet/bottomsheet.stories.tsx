@@ -1,7 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import BottomSheet from './bottomsheet';
+import BottomSheet from './Bottomsheet';
 import { useBottomSheet } from './useBottomSheet';
 
 const meta: Meta<typeof BottomSheet> = {

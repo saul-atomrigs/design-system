@@ -5,7 +5,7 @@ import { css } from '@emotion/react';
 
 import { darken } from 'polished';
 
-import { Icon } from '../Icon/Icon';
+import { Icon } from '../icon/Icon';
 import { color } from '../shared/styles';
 
 type LinkProps = {

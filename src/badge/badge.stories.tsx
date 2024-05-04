@@ -1,4 +1,4 @@
-import { Badge } from './badge';
+import { Badge } from './Badge';
 import type { StoryObj } from '@storybook/react';
 
 type Story = StoryObj<typeof Badge>;

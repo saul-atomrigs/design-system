@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { color, typography } from '../shared/styles';
 import { glow } from '../shared/animation';
-import { Icon } from '../Icon/Icon';
+import { Icon } from '../icon/Icon';
 
 type AvatarProps = {
   size?: 'tiny' | 'small' | 'medium' | 'large';
