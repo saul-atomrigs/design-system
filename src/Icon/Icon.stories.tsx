@@ -1,8 +1,21 @@
+import React from 'react';
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
-import { Icon } from './Icon';
+import type { Meta, StoryObj } from '@storybook/react';
+
+import { Icon } from '../icon/Icon';
 import { icons } from '../shared/icons';
-import type { StoryObj } from '@storybook/react';
+
+const meta: Meta<typeof Icon> = {
+  title: 'Icon',
+  component: Icon,
+  tags: ['autodocs'],
+  parameters: {
+    layout: 'fullscreen',
+  },
+};
+
+export default meta;
 
 type Story = StoryObj<typeof Icon>;
 
@@ -50,12 +63,7 @@ const List = styled.ul`
   list-style: none;
 `;
 
-export default {
-  title: 'Design System/Icon',
-  component: Icon,
-};
-
-export const Labels = {
+export const Labels: Story = {
   render: () => (
     <>
       There are {Object.keys(icons).length} icons
@@ -71,7 +79,7 @@ export const Labels = {
   ),
 };
 
-export const NoLabels = {
+export const NoLabels: Story = {
   name: 'no labels',
   render: () => (
     <List>
