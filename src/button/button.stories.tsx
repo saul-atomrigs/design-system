@@ -1,9 +1,10 @@
+import React from 'react';
 import styled from '@emotion/styled';
 
-import { Button } from './button';
-import { Icon } from '../Icon/Icon';
-import { StoryLinkWrapper } from '../link-wrapper/story-link-wrapper';
-import type { ButtonProps } from './button';
+import { Button } from './Button';
+import { Icon } from '../icon/Icon';
+import { StoryLinkWrapper } from '../link-wrapper/StoryLinkWrapper';
+import type { ButtonProps } from './Button';
 
 const CustomButton = styled.button<ButtonProps>`
   border: 1px solid green;
@@ -18,7 +19,7 @@ function ButtonWrapper(props: ButtonProps) {
 }
 
 export default {
-  title: 'Design System/Button',
+  title: 'Button',
   component: Button,
 };
 
