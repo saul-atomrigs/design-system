@@ -58,9 +58,6 @@ const BadgeWrapper = styled.div<BadgeProps>`
     `};
 `;
 
-/**
- * **Badges?!** We don't need no stinkin' badges!!
- */
 export function Badge({ ...props }) {
   return <BadgeWrapper {...props} />;
 }
