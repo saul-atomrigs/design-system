@@ -6,13 +6,14 @@ import Text from './Text';
 const meta: Meta<typeof Text> = {
   title: 'Text',
   component: Text,
+  tags: ['autodocs'],
   argTypes: {
     as: {
       table: { disable: true },
     },
   },
   args: {
-    children: '안녕하세요 펀잇입니다. 로망오우타해황',
+    children: 'This is a text',
   },
 };
 

@@ -7,6 +7,7 @@ import { useBottomSheet } from './useBottomSheet';
 const meta: Meta<typeof BottomSheet> = {
   title: 'BottomSheet',
   component: BottomSheet,
+  tags: ['autodocs'],
   argTypes: {
     children: {
       description: 'BottomSheet 컴포넌트 내부에 들어갈 내용입니다.',
