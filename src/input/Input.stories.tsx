@@ -28,13 +28,13 @@ export const Default: Story = {};
 
 export const WithPlaceholder: Story = {
   args: {
-    placeholder: '상품 이름을 검색하세요.',
+    placeholder: 'Search the product.',
   },
 };
 
 export const WithIcon: Story = {
   args: {
-    placeholder: '상품 이름을 검색하세요.',
+    placeholder: 'Search the product.',
     rightIcon: true,
   },
 };
@@ -42,7 +42,7 @@ export const WithIcon: Story = {
 export const Error: Story = {
   args: {
     isError: true,
-    errorMessage: '10글자 이내로 입력해주세요.',
+    errorMessage: 'Should be less than 10 characters.',
   },
 };
 
