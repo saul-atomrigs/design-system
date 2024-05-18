@@ -8,6 +8,7 @@ import theme from '../styles/theme';
 const meta: Meta<typeof Spacing> = {
   title: 'Spacing',
   component: Spacing,
+  tags: ['autodocs'],
 };
 
 export default meta;
