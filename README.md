@@ -11,6 +11,16 @@ yarn add @saul-atomrigs/design-system
 ```
 pnpm add @saul-atomrigs/design-system
 ```
+# Storybook
+```
+npm run storybook
+```
+```
+yarn storybook
+```
+```
+pnpm run storybook
+```
 
 # Author
 [@saul-atomrigs](https://github.com/saul-atomrigs)
