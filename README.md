@@ -11,3 +11,6 @@ yarn add @saul-atomrigs/design-system
 ```
 pnpm add @saul-atomrigs/design-system
 ```
+
+# Author
+[@saul-atomrigs](https://github.com/saul-atomrigs)
