@@ -6,5 +6,6 @@ export { DualCTAButton } from './src/components/DualCTAButton';
 export { Error } from './src/components/Error';
 export { List } from './src/components/List';
 export { Loading } from './src/components/Loading';
+export { Modal } from './src/components/Modal';
 export { TextInput } from './src/components/TextInput';
 export { Txt } from './src/components/Txt';
