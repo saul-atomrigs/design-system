@@ -1,20 +1,13 @@
 import React from 'react';
-import { colors, size } from './design-tokens';
+import { colors, size, fontWeight } from './design-tokens';
 
 interface TxtProps {
   children: React.ReactNode;
-  weight?: 'normal' | 'medium' | 'semibold' | 'bold';
+  weight?: keyof typeof fontWeight;
   size?: keyof typeof size;
   color?: keyof typeof colors | string;
   style?: React.CSSProperties;
 }
-
-const weightMap = {
-  normal: '400',
-  medium: '500',
-  semibold: '600',
-  bold: '700',
-};
 
 export const Txt = ({
   children,
@@ -30,7 +23,7 @@ export const Txt = ({
     <div
       style={{
         fontSize: size[sizeKey],
-        fontWeight: weightMap[weight],
+        fontWeight: fontWeight[weight],
         color: textColor,
         ...style,
       }}
