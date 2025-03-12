@@ -1,3 +1,5 @@
 import { colors } from './colors';
 import { spacing } from './spacing';
-export { colors, spacing };
+import { size } from './size';
+
+export { colors, spacing, size };
