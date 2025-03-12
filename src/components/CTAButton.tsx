@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button } from './Button';
-import { spacing } from './design-tokens/spacing';
-import { colors } from './design-tokens/colors';
+import { colors, spacing } from './design-tokens';
 
 interface CTAButtonProps {
   children: React.ReactNode;
