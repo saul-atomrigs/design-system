@@ -1,9 +1,11 @@
 import React from 'react';
+import { colors } from './design-tokens/colors';
 
 interface TxtProps {
   children: React.ReactNode;
   weight?: 'normal' | 'medium' | 'semibold' | 'bold';
   size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl';
+  color?: keyof typeof colors | string;
   style?: React.CSSProperties;
 }
 
@@ -27,13 +29,19 @@ export const Txt = ({
   children,
   weight = 'normal',
   size = 'base',
+  color = 'black',
   style,
 }: TxtProps) => {
+  // Determine if the color is a token or a direct color value
+  const textColor =
+    color in colors ? colors[color as keyof typeof colors] : color;
+
   return (
     <div
       style={{
         fontSize: sizeMap[size],
         fontWeight: weightMap[weight],
+        color: textColor,
         ...style,
       }}
     >
