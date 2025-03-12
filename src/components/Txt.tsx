@@ -1,39 +1,30 @@
 import React from 'react';
+import { colors, size, fontWeight } from './design-tokens';
 
 interface TxtProps {
   children: React.ReactNode;
-  weight?: 'normal' | 'medium' | 'semibold' | 'bold';
-  size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl';
+  weight?: keyof typeof fontWeight;
+  size?: keyof typeof size;
+  color?: keyof typeof colors | string;
   style?: React.CSSProperties;
 }
-
-const sizeMap = {
-  xs: '0.75rem',
-  sm: '0.875rem',
-  base: '1rem',
-  lg: '1.125rem',
-  xl: '1.25rem',
-  '2xl': '1.5rem',
-};
-
-const weightMap = {
-  normal: '400',
-  medium: '500',
-  semibold: '600',
-  bold: '700',
-};
 
 export const Txt = ({
   children,
   weight = 'normal',
-  size = 'base',
+  size: sizeKey = 'base',
+  color = 'black',
   style,
 }: TxtProps) => {
+  const textColor =
+    color in colors ? colors[color as keyof typeof colors] : color;
+
   return (
     <div
       style={{
-        fontSize: sizeMap[size],
-        fontWeight: weightMap[weight],
+        fontSize: size[sizeKey],
+        fontWeight: fontWeight[weight],
+        color: textColor,
         ...style,
       }}
     >
