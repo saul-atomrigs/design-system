@@ -5,6 +5,8 @@ import { colors } from './design-tokens';
 interface ButtonProps {
   children: React.ReactNode;
   onClick?: () => void;
+  onMouseOver?: () => void;
+  onMouseOut?: () => void;
   variant?: 'primary' | 'secondary';
   fullWidth?: boolean;
   disabled?: boolean;
@@ -16,13 +18,13 @@ export const Button = ({
   variant = 'primary',
   fullWidth = false,
   onClick,
+  onMouseOut,
+  onMouseOver,
   disabled = false,
   type = 'button',
 }: ButtonProps) => {
   const bgColor =
     variant === 'primary' ? colors['primary-500'] : colors['secondary-500'];
-  const hoverBgColor =
-    variant === 'primary' ? colors['primary-600'] : colors['secondary-600'];
 
   return (
     <button
@@ -40,16 +42,8 @@ export const Button = ({
         width: fullWidth ? '100%' : 'auto',
         transition: 'background-color 0.2s ease',
       }}
-      onMouseOver={(e) => {
-        if (!disabled) {
-          e.currentTarget.style.backgroundColor = hoverBgColor;
-        }
-      }}
-      onMouseOut={(e) => {
-        if (!disabled) {
-          e.currentTarget.style.backgroundColor = bgColor;
-        }
-      }}
+      onMouseOver={onMouseOver}
+      onMouseOut={onMouseOut}
     >
       {children}
     </button>

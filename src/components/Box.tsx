@@ -6,6 +6,8 @@ interface BoxProps {
   bg?: string;
   padding?: string;
   onClick?: () => void;
+  onMouseOver?: () => void;
+  onMouseOut?: () => void;
   align?: 'center' | 'left' | 'right';
   style?: React.CSSProperties;
 }
@@ -15,6 +17,8 @@ export const Box = ({
   bg = colors.white,
   padding = '1rem',
   onClick,
+  onMouseOver,
+  onMouseOut,
   align = 'left',
   style,
 }: BoxProps) => {
@@ -33,14 +37,8 @@ export const Box = ({
         alignItems: align === 'center' ? 'center' : 'flex-start',
         ...style,
       }}
-      onMouseOver={(e) => {
-        if (onClick) {
-          e.currentTarget.style.transform = 'scale(1.02)';
-        }
-      }}
-      onMouseOut={(e) => {
-        e.currentTarget.style.transform = 'none';
-      }}
+      onMouseOver={onMouseOver}
+      onMouseOut={onMouseOut}
     >
       {children}
     </div>
