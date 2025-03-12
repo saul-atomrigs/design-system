@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from './Button';
+import { colors, spacing } from './design-tokens';
 
 interface CTAButtonProps {
   children: React.ReactNode;
@@ -15,19 +16,22 @@ export const CTAButton = ({
   type = 'button',
 }: CTAButtonProps) => {
   return (
-    <div className='cta-button-container'>
+    <div
+      style={{
+        position: 'fixed',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        padding: spacing.base,
+        backgroundColor: colors.white,
+        boxShadow: `0 -2px 5px rgba(${colors.black}, 0.1)`,
+        display: 'flex',
+        justifyContent: 'center',
+      }}
+    >
       <Button fullWidth onClick={onClick} disabled={disabled} type={type}>
         {children}
       </Button>
-      <style>{`
-        .cta-button-container {
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          padding: 1rem;
-        }
-      `}</style>
     </div>
   );
 };
