@@ -25,14 +25,20 @@ const Trigger = () => {
   const { tabs, activeIndex, setActiveIndex } = useTabs();
 
   return (
-    <div className='flex border-b'>
+    <div style={{ display: 'flex', borderBottom: '1px solid #e2e8f0' }}>
       {tabs.map((tab, index) => (
         <button
           key={index}
           onClick={() => setActiveIndex(index)}
-          className={`px-4 py-2 ${
-            activeIndex === index ? 'border-b-2 border-blue-500 font-bold' : ''
-          }`}
+          style={{
+            padding: '0.5rem 1rem',
+            ...(activeIndex === index
+              ? {
+                  borderBottom: '2px solid #3b82f6',
+                  fontWeight: 'bold',
+                }
+              : {}),
+          }}
         >
           {tab.label}
         </button>
@@ -44,7 +50,7 @@ const Trigger = () => {
 const Content = () => {
   const { tabs, activeIndex } = useTabs();
 
-  return <div className='p-4'>{tabs[activeIndex].content}</div>;
+  return <div style={{ padding: '1rem' }}>{tabs[activeIndex].content}</div>;
 };
 
 export const Tabs = ({
@@ -57,7 +63,7 @@ export const Tabs = ({
 
   return (
     <TabsContext.Provider value={{ tabs, activeIndex, setActiveIndex }}>
-      <div className='w-full'>{children}</div>
+      <div style={{ width: '100%' }}>{children}</div>
     </TabsContext.Provider>
   );
 };
