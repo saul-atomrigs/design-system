@@ -8,4 +8,5 @@ export { List } from './src/components/List';
 export { Loading } from './src/components/Loading';
 export { Modal } from './src/components/Modal';
 export { TextInput } from './src/components/TextInput';
+export { Tabs } from './src/components/Tabs';
 export { Txt } from './src/components/Txt';
