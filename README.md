@@ -157,6 +157,35 @@ function App() {
 | message  | string    | "Something went wrong" | Error message to display          |
 | children | ReactNode | undefined              | Alternative content for the error |
 
+### IntersectionObserver
+
+A wrapper component designed for implementing features like infinite scrolling or lazy loading. It wraps the browser's IntersectionObserver API, allowing you to trigger specific actions when an element enters the viewport.
+
+````jsx
+import { IntersectionObserver } from '@saul-atomrigs/design-system'
+
+function App() {
+  return (
+    <IntersectionObserver
+      onIntersect={loadMore}
+      disabled={!hasMore || isLoading}
+    >
+      {isLoading && <div>...</div>}
+    </IntersectionObserver>
+  )
+}
+
+#### Props
+
+| Prop | 타입 | 기본값 | 설명 |
+|------|------|--------|------|
+| `children` | ReactNode | 필수 | 컴포넌트 내부에 렌더링될 React 노드 |
+| `onIntersect` | () => void | 필수 | 관찰 대상이 뷰포트와 교차할 때 호출되는 콜백 함수 |
+| `threshold` | number | 0.5 | 관찰 대상이 뷰포트와 얼마나 교차해야 콜백을 실행할지를 나타내는 값 (0.0 ~ 1.0) |
+| `rootMargin` | string | '200px' | Root 경계의 여백을 정의하는 문자열 (CSS 마진 형식) |
+| `observerHeight` | string | '10px' | 관찰 대상 요소의 높이 |
+| `disabled` | boolean | false | 관찰자를 비활성화할지 여부 |
+
 ### `List`
 
 ```jsx
@@ -171,7 +200,7 @@ function App() {
     </List>
   );
 }
-```
+````
 
 #### Props
 
