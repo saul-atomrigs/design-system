@@ -4,6 +4,7 @@ export { Checkbox } from './src/components/Checkbox';
 export { CTAButton } from './src/components/CTAButton';
 export { DualCTAButton } from './src/components/DualCTAButton';
 export { Error } from './src/components/Error';
+export { IntersectionObserver } from './src/components/IntersectionObserver';
 export { List } from './src/components/List';
 export { Loading } from './src/components/Loading';
 export { Modal } from './src/components/Modal';
